@@ -5,11 +5,13 @@ const useWindowSize = () => {
     height: number;
     width: number;
   }>({
-    height: window.innerHeight,
-    width: window.innerWidth,
+    height: 0, // Значения по умолчанию для сервера
+    width: 0,
   });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleResize = () => {
       setWindowSize({
         height: window.innerHeight,
