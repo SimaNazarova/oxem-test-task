@@ -1,0 +1,32 @@
+@import '../styles/fonts';
+
+//COLORS
+$primary: #575757;
+$secondary: #ff9514;
+$secondaryLight: #ffa83d;
+$additonal: #ffff;
+$dark: #111111;
+$lightDark: #575757;
+
+//FONTS
+$mainFont: 'Gilroy', sans-serif;
+$secondFont: 'Gilroy', sans-serif;
+
+// QUERIES
+@mixin laptop() {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}

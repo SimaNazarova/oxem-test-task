@@ -1,0 +1,72 @@
+@import '../../styles/vars';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+  margin-left: 48px;
+  margin-right: 48px;
+  &__leftSide {
+    display: flex;
+    align-items: center;
+  }
+
+  &__leftSide-subtitle {
+    font-size: 16px;
+    color: #111111;
+    opacity: 0.5;
+    letter-spacing: 0.92px;
+    font-family: $secondFont;
+  }
+
+  &__verticalLine {
+    width: 1px;
+    height: 30px;
+    background-color: #c4c4c4;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+
+  &__rightSide {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  &__rightSide-menu {
+    display: flex;
+    gap: 33px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $secondFont;
+    cursor: pointer;
+    color: $primary;
+  }
+}
+
+@include laptop {
+  .header {
+    margin-top: 24px;
+  }
+}
+
+@include tablet {
+  .header {
+    margin-top: 16px;
+    margin-left: 36px;
+    margin-right: 34px;
+    &__verticalLine {
+      margin-left: 12px;
+      margin-right: 17px;
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    margin-top: 23px;
+    margin-left: 20px;
+    margin-right: 16px;
+  }
+}

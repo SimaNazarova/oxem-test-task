@@ -1,0 +1,53 @@
+@import '../../styles/vars';
+
+.smallButton {
+  border: 1px solid $secondary;
+  font-family: $secondFont;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-left: 22px;
+  cursor: pointer;
+
+  &_transparent {
+    color: $secondary;
+    background-color: transparent;
+  }
+
+  &_transparent:hover {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $additonal;
+  }
+  &_transparent:active {
+    background-color: $secondaryLight;
+    border-color: $secondaryLight;
+    color: $additonal;
+  }
+  &_transparent:disabled {
+    opacity: 40%;
+    cursor: auto;
+    pointer-events: none;
+  }
+  &_color {
+    color: $additonal;
+    background-color: $secondary;
+  }
+}
+
+// &_transparent:hover {
+//   background-color: $dark;
+//   border-color: $dark;
+//   color: $additonal;
+// }
+// &_transparent:active {
+//   background-color: $lightDark;
+//   border-color: $lightDark;
+//   color: $additonal;
+// }
+// &_transparent:disabled {
+//   background-color: $lightDark;
+//   border-color: $lightDark;
+//   color: $additonal;
+// }
