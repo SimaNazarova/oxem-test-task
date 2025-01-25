@@ -1,4 +1,4 @@
-@import '../../styles/vars';
+@import '../../../styles/vars';
 
 .header {
   display: flex;
@@ -6,6 +6,9 @@
   margin-top: 21px;
   margin-left: 48px;
   margin-right: 48px;
+  position: sticky;
+  top: 0;
+  background-color: $additonal;
   &__leftSide {
     display: flex;
     align-items: center;

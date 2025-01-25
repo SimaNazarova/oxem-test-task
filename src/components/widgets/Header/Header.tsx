@@ -1,19 +1,19 @@
 'use client';
 import './Header.scss';
 import Image from 'next/image';
-import logo from '../../assets/svg/logo.svg';
-import SmallButton from '../shared/SmallButton';
-import { menu } from '../../constants/mock-data';
-import useWindowSize from '../../hooks/useWindowSize';
-import BurgerMenuBtn from '../features/BurgerMenu/BurgerMenuBtn';
+import logo from '../../../assets/svg/logo.svg';
+import SmallButton from '../../shared/SmallButton/SmallButton';
+import { menu } from '../../../constants/mock-data';
+import useWindowSize from '../../../hooks/useWindowSize';
+import BurgerMenuBtn from '../../features/BurgerMenu/BurgerMenuBtn';
 import Link from 'next/link';
-import Dropdown from '../shared/Dropdown/Dropdown';
-import { useStore } from '../../store/store';
+import Dropdown from '../../shared/Dropdown/Dropdown';
+import { useStore } from '../../../store/store';
 
 function Header() {
   const { width } = useWindowSize();
   const { openDropdown, setOpenDropdown, submenuId, setSubmenuId } = useStore();
-
+  console.log(width, 'width');
   const chosenItemList = menu.find(item => submenuId === item.id)?.submenu;
 
   function openDropdownMenu(id: number) {
@@ -38,12 +38,12 @@ function Header() {
         )}
       </div>
       {width > 1023 ? (
-        <div className='header__rightSide'>
+        <div className='header__rightSide' onMouseLeave={() => openDropdownMenu(0)}>
           <ul className='header__rightSide-menu'>
             {menu.map(item => {
               return (
                 <li key={item.id} className='header__rightSide-item'>
-                  <Link href='#' onClick={() => openDropdownMenu(item.id)}>
+                  <Link href='#' onMouseEnter={() => openDropdownMenu(item.id)}>
                     {item.title}
                   </Link>
                 </li>

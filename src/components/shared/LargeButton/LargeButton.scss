@@ -1,0 +1,48 @@
+@import '../../../styles/vars';
+
+.largeButton {
+  border: 1px solid $secondary;
+  color: $additonal;
+  background-color: $secondary;
+  font-family: $secondFont;
+  padding: 14px 92px 18px 92px;
+  border-radius: 40px;
+  font-weight: 600;
+  line-height: 36px;
+  font-size: 30px;
+  max-width: 427px;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dark;
+    border-color: $dark;
+    color: $additonal;
+  }
+  &:active {
+    background-color: $lightDark;
+    border-color: $lightDark;
+    color: $additonal;
+  }
+  &:disabled {
+    background-color: $secondaryLight;
+    border-color: $secondaryLight;
+    color: $additonal;
+    cursor: auto;
+  }
+}
+
+@include laptop {
+  .largeButton {
+    padding: 14px 52px 18px 52px;
+    max-width: 345px;
+  }
+}
+
+@include mobile {
+  .largeButton {
+    padding: 14px 0px 18px 0px;
+    max-width: 280px;
+    font-size: 22px;
+  }
+}
