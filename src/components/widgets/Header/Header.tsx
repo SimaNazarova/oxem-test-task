@@ -13,7 +13,7 @@ import { useStore } from '../../../store/store';
 function Header() {
   const { width } = useWindowSize();
   const { openDropdown, setOpenDropdown, submenuId, setSubmenuId } = useStore();
-  console.log(width, 'width');
+
   const chosenItemList = menu.find(item => submenuId === item.id)?.submenu;
 
   function openDropdownMenu(id: number) {

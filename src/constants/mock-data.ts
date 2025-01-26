@@ -16,18 +16,18 @@ export const calcData = [
   {
     id: 1,
     title: 'Стоимость автомобиля',
-    start: 1,
-    end: 600000,
+    start: 1000000,
+    end: 6000000,
     sign: '₽',
-    outlineSign: false,
+    name: 'price',
   },
   {
     id: 2,
     title: 'Первоначальный взнос',
     start: 10,
     end: 60,
-    sign: '13%',
-    outlineSign: true,
+    sign: '%',
+    name: 'payment',
   },
   {
     id: 3,
@@ -35,6 +35,8 @@ export const calcData = [
     start: 1,
     end: 60,
     sign: 'мес.',
-    outlineSign: false,
+    name: 'term',
   },
 ];
+
+export const LEASING_RATE = 21 / (100 * 12); //Ключевая ставка Банка России на 26.01
