@@ -7,10 +7,14 @@ $secondaryLight: #ffa83d;
 $additonal: #ffff;
 $dark: #111111;
 $lightDark: #575757;
+$error: #d53234;
 
 //FONTS
 $mainFont: 'Nekst Black', 'sans-serif';
 $secondFont: 'Gilroy', 'sans-serif';
+
+//BORDERS
+$border: 1px solid #f3f3f4;
 
 // QUERIES
 @mixin laptop() {
@@ -47,7 +51,14 @@ $secondFont: 'Gilroy', 'sans-serif';
   color: $primary;
   font-size: 16px;
 
+
   @include mobile {
     font-size: 14px;
   }
+}
+
+@mixin errorText {
+  font-family: $secondFont;
+  color: $error;
+  font-size: 16px;
 }

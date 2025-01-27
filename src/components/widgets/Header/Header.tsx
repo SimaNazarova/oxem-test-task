@@ -50,7 +50,7 @@ function Header() {
               );
             })}
           </ul>
-          <SmallButton text='Оставить заявку' type='transparent' />
+          <SmallButton isValid={true} text='Оставить заявку' type='transparent' />
           {openDropdown && chosenItemList && <Dropdown data={chosenItemList} />}
         </div>
       ) : (

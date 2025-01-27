@@ -3,3 +3,8 @@ export interface ICalcData {
   payment: number;
   price: number;
 }
+
+export interface IApplicationData {
+  number: string;
+  name: string;
+}

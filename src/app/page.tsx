@@ -1,4 +1,5 @@
 import Calculator from '../components/widgets/Calculator/Calculator';
+
 import Slider from '../components/widgets/Slider/Slider';
 import './page.scss';
 

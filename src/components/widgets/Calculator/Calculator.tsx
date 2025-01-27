@@ -27,9 +27,6 @@ function Calculator() {
     resolver: yupResolver(validationSchema),
     reValidateMode: 'onChange',
     mode: 'onChange',
-    defaultValues: {
-      price: 1000000,
-    },
   });
 
   const onSubmit = (data: ICalcData) => {

@@ -17,3 +17,8 @@ export const validationSchema = Yup.object().shape({
     .max(60, 'Число должно быть не больше 60')
     .required('Поле обязательно'),
 });
+
+export const applicationSchema = Yup.object().shape({
+  number: Yup.string().required('Поле обязательно'),
+  name: Yup.string().required('Поле обязательно').max(50, 'Имя должно быть не больше 50 символов'),
+});

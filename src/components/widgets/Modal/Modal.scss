@@ -1,0 +1,152 @@
+@import '../../../styles/vars';
+@import '../../../styles/fonts';
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.5);
+  z-index: 1000;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    background-color: #fff;
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 655px;
+    width: 100%;
+  }
+  &__title {
+    font-family: 'Nekst Black';
+    font-style: normal;
+    font-size: 54px;
+    line-height: 90%;
+    font-weight: 600;
+    @include mobile {
+      font-size: 34px;
+    }
+  }
+
+  &__text {
+    @include label;
+    margin-top: 24px;
+    max-width: 466px;
+    line-height: 150%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__btnContainer {
+    border: $border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding: 20px 23px 25px 33px;
+    border-radius: 16px;
+    grid-column: 1/ -1;
+  }
+
+  &__btnText {
+    font-family: $secondFont;
+    color: $primary;
+    font-size: 14px;
+    line-height: 150%;
+    max-width: 351px;
+  }
+
+  &__socials {
+    display: flex;
+    margin-top: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    margin-top: 30px;
+  }
+
+  &__btnLink {
+    color: $dark;
+  }
+}
+
+@include laptop {
+}
+
+@include tablet {
+}
+
+@include mobile {
+  .modal {
+    &__container {
+      height: 90%;
+    }
+    &__title {
+      font-size: 22px;
+      margin: 0 auto;
+    }
+
+    &__close {
+      display: none;
+    }
+    &__btnContainer {
+      border: none;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    &__btnText {
+      text-align: center;
+      line-height: 136%;
+    }
+    &__socials {
+      margin-top: 24px;
+    }
+    &__form {
+      justify-items: center;
+      grid-template-columns: 1fr;
+      padding-right: 20px;
+    }
+    &__content {
+      padding-left: 20px;
+      padding-right: 20px;
+      max-width: 372px;
+    }
+
+    &__text {
+      max-width: 245px;
+      line-height: 136%;
+      margin-top: 16px;
+    }
+
+    &__btnContainer {
+      padding: 0;
+    }
+  }
+}

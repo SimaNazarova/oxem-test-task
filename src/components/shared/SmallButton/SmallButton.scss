@@ -7,7 +7,6 @@
   border-radius: 40px;
   font-weight: 600;
   line-height: 24px;
-  margin-left: 22px;
   cursor: pointer;
 
   &_transparent {
@@ -34,20 +33,28 @@
     color: $additonal;
     background-color: $secondary;
   }
+  &_color:hover {
+    background-color: $dark;
+    border-color: $dark;
+    color: $additonal;
+  }
+  &_color:active {
+    background-color: $lightDark;
+    border-color: $lightDark;
+    color: $additonal;
+  }
+  &_color:disabled {
+    background-color: $secondaryLight;
+    border-color: $secondaryLight;
+    color: $additonal;
+    cursor: auto;
+    opacity: 40%;
+  }
 }
 
-// &_transparent:hover {
-//   background-color: $dark;
-//   border-color: $dark;
-//   color: $additonal;
-// }
-// &_transparent:active {
-//   background-color: $lightDark;
-//   border-color: $lightDark;
-//   color: $additonal;
-// }
-// &_transparent:disabled {
-//   background-color: $lightDark;
-//   border-color: $lightDark;
-//   color: $additonal;
-// }
+@include mobile {
+  .smallButton {
+    width: 100%;
+    max-width: 280px;
+  }
+}
