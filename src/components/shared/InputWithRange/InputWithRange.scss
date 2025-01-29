@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .rangeInput {
   display: flex;
@@ -14,7 +14,7 @@
   &__inputText {
     margin-top: 24px;
     border-radius: 16px;
-    background-color: #f3f3f4;
+    background-color: $inputBg;
     border: none;
     height: 68px;
     padding: 0 24px;
@@ -29,7 +29,6 @@
     -webkit-appearance: none;
     height: 2px;
     width: 90%;
-    background-color: $secondary;
   }
   &__inputRange::-webkit-slider-thumb {
     -webkit-appearance: none;

@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .header {
   display: flex;
@@ -8,27 +8,8 @@
   margin-right: 48px;
   position: sticky;
   top: 0;
-  background-color: $additonal;
-  &__leftSide {
-    display: flex;
-    align-items: center;
-  }
-
-  &__leftSide-subtitle {
-    font-size: 16px;
-    color: #111111;
-    opacity: 0.5;
-    letter-spacing: 0.92px;
-    font-family: $secondFont;
-  }
-
-  &__verticalLine {
-    width: 1px;
-    height: 30px;
-    background-color: #c4c4c4;
-    margin-left: 17px;
-    margin-right: 17px;
-  }
+  background-color: transparent;
+  z-index: 1000;
 
   &__rightSide {
     display: flex;
@@ -46,6 +27,18 @@
     cursor: pointer;
     color: $primary;
   }
+
+  &__rightSide-item {
+    padding: 6px 16px;
+    border-radius: 8px;
+  }
+
+  &__rightSide-item:hover {
+    background-color: $inputBg;
+  }
+  &__rightSide-item_open {
+    background-color: $inputBg;
+  }
 }
 
 @include laptop {
@@ -59,10 +52,6 @@
     margin-top: 16px;
     margin-left: 36px;
     margin-right: 34px;
-    &__verticalLine {
-      margin-left: 12px;
-      margin-right: 17px;
-    }
   }
 }
 

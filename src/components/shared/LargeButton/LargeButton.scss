@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .largeButton {
   border: 1px solid $secondary;
@@ -20,8 +20,8 @@
     color: $additonal;
   }
   &:active {
-    background-color: $lightDark;
-    border-color: $lightDark;
+    background-color: $primary;
+    border-color: $primary;
     color: $additonal;
   }
   &:disabled {

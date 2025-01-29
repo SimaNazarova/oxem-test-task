@@ -1,17 +1,16 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
-.slider {
+.gallery {
   width: 100%;
   height: 473px;
-  margin-top: 21px;
+  margin: 0 auto;
+
   position: relative;
-
   max-width: 1344px;
+  border-radius: 32px;
 
-  &__image {
-    position: absolute;
-    top: 0;
-  }
+  margin-top: 21px;
+  overflow: hidden;
 
   &__content {
     position: absolute;
@@ -20,8 +19,11 @@
     max-width: 500px;
   }
   &__title {
-    @include title;
     color: $additonal;
+    font-family: $mainFont;
+    font-size: 54px;
+    line-height: 90%;
+    font-weight: 600;
   }
   &__text {
     font-family: $mainFont;
@@ -37,29 +39,64 @@
   }
 }
 
-.slider .swiper-horizontal > .swiper-pagination-bullets {
+.gallery .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 44px;
   gap: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.slider .swiper-pagination-bullet {
+.gallery .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
   background-color: $additonal;
 }
 
-.slider .swiper-pagination-bullet-active {
+.gallery .swiper-pagination-bullet-active {
   width: 12px;
   height: 12px;
 }
 
-@include laptop {
+@media screen and (max-width: 1024px) {
+  .gallery {
+    max-width: 928px;
+  }
 }
 
-@include tablet {
+@media screen and (max-width: 768px) {
+  .gallery {
+    max-width: 696px;
+    &__content {
+      top: unset;
+      bottom: 68px;
+      left: 44px;
+      max-width: 500px;
+    }
+    &__text {
+      display: none;
+    }
+  }
 }
 
-@include mobile {
+@media screen and (max-width: 320px) {
+  .gallery {
+    border-radius: 0 0 0 32px;
+    height: 550px;
+    margin-top: -59px;
+    &__title {
+      font-size: 32px;
+    }
+    &__text {
+      display: none;
+    }
+    &__content {
+      max-width: 263px;
+      bottom: 86px;
+      left: 32px;
+    }
+
+    &__btn {
+      max-width: 174px;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .smallButton {
   border: 1px solid $secondary;
@@ -39,8 +39,8 @@
     color: $additonal;
   }
   &_color:active {
-    background-color: $lightDark;
-    border-color: $lightDark;
+    background-color: $primary;
+    border-color: $primary;
     color: $additonal;
   }
   &_color:disabled {
@@ -56,5 +56,6 @@
   .smallButton {
     width: 100%;
     max-width: 280px;
+    font-size: 15px;
   }
 }

@@ -1,3 +1,5 @@
+@use '../../../styles/vars' as *;
+
 .arrows {
   position: absolute;
   right: 44px;
@@ -5,9 +7,19 @@
   gap: 12px;
   z-index: 5;
   display: flex;
+  &__arrow-left,
+  &__arrow-right {
+    cursor: pointer;
+  }
+}
+
+@include mobile {
+  .arrows {
+    display: none;
+  }
 }
 
 circle {
-  transform: rotate(-90deg); /* Начало анимации сверху */
+  transform: rotate(-90deg);
   transform-origin: center;
 }

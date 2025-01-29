@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .smallRangeInput {
   display: flex;
@@ -14,7 +14,7 @@
   &__container {
     margin-top: 24px;
     border-radius: 16px;
-    background-color: #f3f3f4;
+    background-color: $inputBg;
     border: none;
     display: flex;
     justify-content: space-between;
@@ -30,9 +30,6 @@
     border: none;
     margin-right: 5px;
     margin-bottom: 5px;
-    // margin-top: 24px;
-    // border-radius: 16px;
-    // background-color: #f3f3f4;
 
     padding: 15px 17px;
     font-family: $mainFont;
@@ -46,7 +43,6 @@
     -webkit-appearance: none;
     height: 2px;
     width: 90%;
-    background-color: $secondary;
   }
   &__inputRange::-webkit-slider-thumb {
     -webkit-appearance: none;

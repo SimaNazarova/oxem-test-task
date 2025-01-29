@@ -1,4 +1,4 @@
-@import '../../../styles/vars';
+@use '../../../styles/vars' as *;
 
 .textField {
   display: flex;
@@ -10,7 +10,7 @@
   &__inputText {
     margin-top: 16px;
     border-radius: 16px;
-    background-color: #f3f3f4;
+    background-color: $inputBg;
     border: none;
     height: 48px;
     padding-top: 15px;

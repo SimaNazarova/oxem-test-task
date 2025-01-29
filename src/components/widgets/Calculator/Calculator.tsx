@@ -17,7 +17,7 @@ function Calculator() {
   const [monthlyPayment, setMonthlyPayment] = useState<number>(0);
   const [fullPayment, setFullPayment] = useState<number>(0);
   const [firstPayment, setFirstPayment] = useState<number>(0);
-
+  console.log(firstPayment, 'firstPayment');
   const {
     control,
     handleSubmit,
@@ -36,11 +36,13 @@ function Calculator() {
   const priceWatch = watch('price');
   const percentageWatch = watch('payment');
   const termWatch = watch('term');
-
+  console.log(priceWatch, 'priceWatch');
   //первоначальный взнос
   useEffect(() => {
-    const res = calcFirstPayment(priceWatch, percentageWatch);
-    setFirstPayment(res);
+    if (priceWatch && percentageWatch) {
+      const res = calcFirstPayment(priceWatch, percentageWatch);
+      setFirstPayment(res);
+    }
   }, [priceWatch, percentageWatch]);
 
   //Ежемесячный платёж
@@ -72,7 +74,6 @@ function Calculator() {
           />
           <SmallInputWithRange
             field={calcData[1]}
-            percentage={null}
             control={control}
             firstPayment={firstPayment}
             error={Boolean(errors.payment)}

@@ -1,4 +1,4 @@
-@import '../styles/fonts';
+@use '../styles/fonts' as *;
 
 //COLORS
 $primary: #575757;
@@ -6,15 +6,16 @@ $secondary: #ff9514;
 $secondaryLight: #ffa83d;
 $additonal: #ffff;
 $dark: #111111;
-$lightDark: #575757;
+// $lightDark: #575757;
 $error: #d53234;
+$inputBg: #f3f3f4;
 
 //FONTS
 $mainFont: 'Nekst Black', 'sans-serif';
 $secondFont: 'Gilroy', 'sans-serif';
 
 //BORDERS
-$border: 1px solid #f3f3f4;
+$border: 1px solid $inputBg;
 
 // QUERIES
 @mixin laptop() {
@@ -50,7 +51,6 @@ $border: 1px solid #f3f3f4;
   font-family: $secondFont;
   color: $primary;
   font-size: 16px;
-
 
   @include mobile {
     font-size: 14px;

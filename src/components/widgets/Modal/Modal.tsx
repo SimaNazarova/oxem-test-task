@@ -1,4 +1,5 @@
 'use client';
+import { createPortal } from 'react-dom';
 import './Modal.scss';
 import Image from 'next/image';
 import close from '../../../assets/svg/close.svg';
@@ -12,6 +13,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import InputWithText from '../../shared/TextField/TextField';
 import { useForm } from 'react-hook-form';
+import { useStore } from '@/src/store/store';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import { useOnClickOutside } from '@/src/hooks/useOnClickOutside';
 
 function Modal() {
   const {
@@ -23,14 +28,44 @@ function Modal() {
     reValidateMode: 'onChange',
     mode: 'onChange',
   });
-
+  const { openModal, setOpenModal, setOpenMobileMenu } = useStore();
   const onSubmit = (data: IApplicationData) => {
     console.log('Form Data:', data);
+
+    closeModal();
   };
 
-  return (
-    <div className='modal'>
-      <div className='modal__container'>
+  const modalRef = useRef<HTMLDivElement>(null);
+  const modalContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (openModal) {
+      gsap.to(modalRef.current, {
+        opacity: 1,
+
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+    }
+  }, [openModal]);
+
+  const closeModal = () => {
+    setOpenMobileMenu(false);
+    gsap.to(modalRef.current, {
+      opacity: 0,
+
+      duration: 0.5,
+      ease: 'power2.out',
+      onComplete: () => setOpenModal(false),
+    });
+  };
+
+  useOnClickOutside(modalContainerRef, closeModal);
+
+  if (!openModal) return null;
+  return createPortal(
+    <div className='modal' ref={modalRef}>
+      <div className='modal__container' ref={modalContainerRef}>
         <div className='modal__content'>
           <h2 className='modal__title'>Онлайн-заявка</h2>
           <p className='modal__text'>
@@ -74,11 +109,12 @@ function Modal() {
             </Link>
           </div>
         </div>
-        <button className='modal__close'>
+        <button className='modal__close' onClick={closeModal}>
           <Image src={close} alt='закрыть модальное окно' />
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

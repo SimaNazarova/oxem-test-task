@@ -15,7 +15,6 @@ type IField = {
 
 interface ISmallInputWithRange {
   field: IField;
-  percentage: number | null;
   control: any;
   firstPayment: number;
   errorMessage?: string;
@@ -30,8 +29,6 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
       <label htmlFor={title} className='smallRangeInput__label'>
         {title}
       </label>
-
-      {/* Controller для текстового инпута */}
       <Controller
         name={name}
         control={control}
@@ -41,36 +38,40 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
           max: end,
           validate: value => (value >= start && value <= end) || `Value must be between ${start} and ${end}`,
         }}
-        render={({ field: { onChange, value } }) => (
-          <>
-            <div className='smallRangeInput__container'>
-              <span className={`smallRangeInput__inputSign`}>{firstPayment}</span>
+        render={({ field: { onChange, value } }) => {
+          const rangeBackground = `linear-gradient(to right, #FF9514 ${((value - start) / (end - start)) * 100}%, #E1E1E1 ${((value - start) / (end - start)) * 100}%)`;
+          return (
+            <>
+              <div className='smallRangeInput__container'>
+                <span className={`smallRangeInput__inputSign`}>{firstPayment}</span>
+                <input
+                  className='smallRangeInput__inputText'
+                  id={title}
+                  type='text'
+                  value={value}
+                  maxLength={2}
+                  onChange={e => {
+                    const inputValue = e.target.value;
+                    if (/^\d*$/.test(inputValue)) {
+                      onChange(inputValue);
+                    }
+                  }}
+                />
+              </div>
               <input
-                className='smallRangeInput__inputText'
+                className='smallRangeInput__inputRange'
                 id={title}
-                type='text'
+                type='range'
+                min={start}
+                max={end}
+                style={{ background: rangeBackground }}
                 value={value}
-                maxLength={2}
-                onChange={e => {
-                  const inputValue = e.target.value;
-                  if (/^\d*$/.test(inputValue)) {
-                    onChange(inputValue);
-                  }
-                }}
+                onChange={e => onChange(Number(e.target.value))}
               />
-            </div>
-            <input
-              className='smallRangeInput__inputRange'
-              id={title}
-              type='range'
-              min={start}
-              max={end}
-              value={value}
-              onChange={e => onChange(Number(e.target.value))}
-            />
-            {error && <span className='error-message'>{String(errorMessage)}</span>}
-          </>
-        )}
+              {error && <span className='error-message'>{String(errorMessage)}</span>}
+            </>
+          );
+        }}
       />
     </div>
   );
