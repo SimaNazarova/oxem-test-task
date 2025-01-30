@@ -69,7 +69,7 @@ const InputWithRange: React.FC<IInputWithRange> = ({ field, percentage, control,
                   onChange(Number(e.target.value));
                 }}
               />
-              {error && <span className='error-message'>{String(errorMessage)}</span>}
+              {error && <span className='rangeInput__error'>{String(errorMessage)}</span>}
             </>
           );
         }}

@@ -2,24 +2,37 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  margin-top: 21px;
-  margin-left: 48px;
-  margin-right: 48px;
+  justify-content: center;
+
   position: sticky;
   top: 0;
-  background-color: transparent;
+  background-color: $additonal;
   z-index: 1000;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  &_border {
+    border-bottom: 1px solid #dedede;
+  }
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 1344px;
+    width: 100%;
+  }
   &__rightSide {
     display: flex;
     align-items: center;
-    gap: 17px;
+    gap: 23px;
   }
 
   &__rightSide-menu {
     display: flex;
-    gap: 33px;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -41,24 +54,26 @@
   }
 }
 
-@include laptop {
-  .header {
-    margin-top: 24px;
-  }
-}
 
-@include tablet {
-  .header {
-    margin-top: 16px;
-    margin-left: 36px;
-    margin-right: 34px;
-  }
-}
 
 @include mobile {
   .header {
-    margin-top: 23px;
-    margin-left: 20px;
-    margin-right: 16px;
+    padding-left: 20px;
+    padding-right: 16px;
+    padding-top: 23px;
+    padding-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    background-color: $dark;
+    padding-left: 20px;
+    padding-right: 16px;
+    padding-top: 23px;
+    padding-bottom: 8px;
+    &_border {
+      border-bottom: none;
+    }
   }
 }

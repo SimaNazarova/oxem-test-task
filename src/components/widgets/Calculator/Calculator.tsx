@@ -17,12 +17,12 @@ function Calculator() {
   const [monthlyPayment, setMonthlyPayment] = useState<number>(0);
   const [fullPayment, setFullPayment] = useState<number>(0);
   const [firstPayment, setFirstPayment] = useState<number>(0);
-  console.log(firstPayment, 'firstPayment');
+
   const {
     control,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(validationSchema),
     reValidateMode: 'onChange',
@@ -36,7 +36,7 @@ function Calculator() {
   const priceWatch = watch('price');
   const percentageWatch = watch('payment');
   const termWatch = watch('term');
-  console.log(priceWatch, 'priceWatch');
+
   //первоначальный взнос
   useEffect(() => {
     if (priceWatch && percentageWatch) {
@@ -47,14 +47,18 @@ function Calculator() {
 
   //Ежемесячный платёж
   useEffect(() => {
-    const res = calcMonthlyPayment(priceWatch, firstPayment, termWatch);
-    setMonthlyPayment(res);
+    if (termWatch > 0) {
+      const res = calcMonthlyPayment(priceWatch, firstPayment, termWatch);
+      setMonthlyPayment(res);
+    }
   }, [priceWatch, firstPayment, termWatch]);
 
   //сумма договора
   useEffect(() => {
-    const res = calcFullPayment(firstPayment, termWatch, monthlyPayment);
-    setFullPayment(res);
+    if (termWatch > 0) {
+      const res = calcFullPayment(firstPayment, termWatch, monthlyPayment);
+      setFullPayment(res);
+    }
   }, [firstPayment, termWatch, monthlyPayment]);
 
   return (
@@ -96,7 +100,7 @@ function Calculator() {
             <p className='calc__sumLabel'>Ежемесячный платеж от</p>
             <p className='calc__sumNum'>{formatNumberWithSpaces(monthlyPayment)} ₽</p>
           </div>
-          <LargeButton text='Оставить заявку' />
+          <LargeButton isValid={isValid} text='Оставить заявку' />
         </div>
       </form>
     </div>

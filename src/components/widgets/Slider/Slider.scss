@@ -1,15 +1,13 @@
 @use '../../../styles/vars' as *;
 
 .gallery {
+  max-width: 1344px;
   width: 100%;
   height: 473px;
   margin: 0 auto;
 
   position: relative;
-  max-width: 1344px;
-  border-radius: 32px;
 
-  margin-top: 21px;
   overflow: hidden;
 
   &__content {
@@ -57,6 +55,11 @@
   height: 12px;
 }
 
+.swiper-slide {
+  overflow: hidden;
+  border-radius: 32px;
+}
+
 @media screen and (max-width: 1024px) {
   .gallery {
     max-width: 928px;
@@ -75,14 +78,15 @@
     &__text {
       display: none;
     }
+    &__btn {
+      max-width: 174px;
+    }
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .gallery {
-    border-radius: 0 0 0 32px;
     height: 550px;
-    margin-top: -59px;
     &__title {
       font-size: 32px;
     }
@@ -94,9 +98,32 @@
       bottom: 86px;
       left: 32px;
     }
+  }
+}
 
-    &__btn {
-      max-width: 174px;
-    }
+@media (max-width: 1440px) {
+  .gallery {
+    width: calc(100% - 96px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    width: calc(100% - 96px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    width: calc(100% - 72px);
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery {
+    width: 100%;
+  }
+  .swiper-slide {
+    border-radius: 0 0 32px;
   }
 }

@@ -24,8 +24,6 @@
     row-gap: 44px;
   }
 
-  &__sumRes {
-  }
   &__sumLabel {
     @include label;
   }
@@ -69,6 +67,7 @@
 
 @include mobile {
   .calc {
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     &__sum {

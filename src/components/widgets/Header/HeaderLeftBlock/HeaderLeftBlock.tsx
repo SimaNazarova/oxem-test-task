@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import logo from '@/src/assets/svg/logo.svg';
+import logoDark from '@/src/assets/svg/logo-dark.svg';
+import logoLight from '@/src/assets/svg/logo-light.svg';
 import useWindowSize from '@/src/hooks/useWindowSize';
 import './HeaderLeftBlock.scss';
 
@@ -9,8 +10,8 @@ const HeaderLeftBlock = () => {
 
   return (
     <div className='headerLeftBlock'>
-      <Image src={logo} alt='логотип' width={width > 1439 ? 200 : 166} />
-      {width > 768 && (
+      <Image src={width > 320 ? logoDark : logoLight} alt='логотип' width={width > 1439 ? 200 : 166} />
+      {width > 767 && (
         <>
           <div className='headerLeftBlock__verticalLine'></div>
           <p className='headerLeftBlock__leftSide-subtitle'>лизинговая компания</p>

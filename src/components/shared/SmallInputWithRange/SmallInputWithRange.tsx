@@ -43,7 +43,7 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
           return (
             <>
               <div className='smallRangeInput__container'>
-                <span className={`smallRangeInput__inputSign`}>{firstPayment}</span>
+                <span className={`smallRangeInput__sum`}>{firstPayment}</span>
                 <input
                   className='smallRangeInput__inputText'
                   id={title}
@@ -57,6 +57,7 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
                     }
                   }}
                 />
+                <span className='smallRangeInput__inputSign'>%</span>
               </div>
               <input
                 className='smallRangeInput__inputRange'
@@ -68,7 +69,7 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
                 value={value}
                 onChange={e => onChange(Number(e.target.value))}
               />
-              {error && <span className='error-message'>{String(errorMessage)}</span>}
+              {error && <span className='smallRangeInput__error'>{String(errorMessage)}</span>}
             </>
           );
         }}

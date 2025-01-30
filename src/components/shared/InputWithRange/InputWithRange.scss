@@ -23,6 +23,7 @@
     color: $primary;
     font-weight: 600;
   }
+
   &__inputRange {
     align-self: center;
     margin-top: -2px;
@@ -48,8 +49,8 @@
     color: $primary;
     font-weight: 600;
     position: absolute;
-    right: 19px;
-    bottom: 14px;
+    right: 21px;
+    bottom: 17px;
     &_outline {
       font-size: 20px;
       background-color: #ebebec;
@@ -57,6 +58,12 @@
       border-radius: 16px;
       bottom: 5px;
     }
+  }
+
+  &__error {
+    @include errorText;
+    position: absolute;
+    bottom: -25px;
   }
 }
 
@@ -79,6 +86,9 @@
         bottom: 7px;
         right: 7px;
       }
+    }
+    &__error {
+      bottom: -36px;
     }
   }
 }

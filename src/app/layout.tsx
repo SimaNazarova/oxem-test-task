@@ -18,10 +18,8 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body>
-        <div className='container'>
-          <Header />
-          {children}
-        </div>
+        <Header />
+        <div className='container'>{children}</div>
         <Modal />
         <MobileMenu />
       </body>

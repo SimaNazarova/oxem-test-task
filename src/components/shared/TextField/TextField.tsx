@@ -31,7 +31,7 @@ const TextField: React.FC<TextField> = ({ control, errorMessage, error, name, pl
           <>
             {type === 'tel' ? (
               <ForwardedInputMask
-                className='textField__inputText'
+                className={`textField__inputText ${error ? 'error-border' : ''}`}
                 type='text'
                 value={value}
                 maxLength={55}
@@ -44,7 +44,7 @@ const TextField: React.FC<TextField> = ({ control, errorMessage, error, name, pl
               <input
                 name={name}
                 ref={register}
-                className='textField__inputText'
+                className={`textField__inputText ${error ? 'error-border' : ''}`}
                 type='text'
                 value={value}
                 maxLength={55}
@@ -57,7 +57,7 @@ const TextField: React.FC<TextField> = ({ control, errorMessage, error, name, pl
             <label className={`textField__inputLabel ${value && 'textField__inputLabel_filled'}`} htmlFor={name}>
               {placeholder}
             </label>
-            {error && <span className='error-message'>{String(errorMessage)}</span>}
+            {error && <span className='textField__error'>{String(errorMessage)}</span>}
           </>
         )}
       />

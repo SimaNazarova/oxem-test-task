@@ -25,20 +25,21 @@
     width: 100%;
   }
 
+  &__inputText:hover {
+    background-color: #eaeaeb;
+  }
   &__inputText:focus {
     border: 1px solid $secondary;
     box-shadow: 0 0 6px rgba(255, 149, 20, 0.5);
+    background-color: $additonal;
     cursor: auto;
-  }
-
-  &__inputText:hover {
-    background-color: #eaeaeb;
   }
   &__inputText:disabled {
     opacity: 40%;
   }
 
-  &__inputError {
+  &__inputText.error-border {
+    box-shadow: none;
     border: 1px solid $error;
   }
 
@@ -65,13 +66,14 @@
     transform: translate(0, 25px) scale(0.8);
     font-size: 12px;
   }
+
+  &__error {
+    @include errorText;
+    position: absolute;
+    bottom: -25px;
+  }
 }
 
-.error-message {
-  @include errorText;
-  position: absolute;
-  bottom: -25px;
-}
 @include mobile {
   .textField {
     display: flex;
@@ -88,6 +90,9 @@
 
     &__inputLabel_filled {
       transform: translate(0, 18px) scale(0.8);
+    }
+    &__error {
+      bottom: -36px;
     }
   }
 }

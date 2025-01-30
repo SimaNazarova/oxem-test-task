@@ -52,8 +52,6 @@ function Slider() {
   const [currentWidth, setCurrentWidth] = useState(320);
 
   useEffect(() => {
-    console.log(currentWidth, 'currentWidth');
-
     if (window.innerWidth > 1024) {
       setCurrentWidth(1440);
     } else if (window.innerWidth > 768) {
@@ -75,12 +73,12 @@ function Slider() {
         modules={[Navigation, Pagination]}
         className='swiper'
         slidesPerView={1}
-        spaceBetween={30}
         pagination={true}
         loop={true}
         onBeforeInit={swiper => {
           swiperRef.current = swiper;
         }}
+        spaceBetween={30}
       >
         {slides.map((slide, index) => {
           const imageSrc =
