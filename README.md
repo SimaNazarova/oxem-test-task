@@ -1,16 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Тестовое задание для веб-студии Oxem
 
-## Getting Started
+[посмотреть лендинг](https://oxem-test-task-nine.vercel.app/)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+#### установка проекта
+```
+ npm install
 ```
 
+#### запуск проекта
+```
+ npm run dev
+```
+
+
+#### В проекте использованы:
+1. Next.js
+2. TypeScript
+3. Стейт менеджер Zustand
+4. SCSS
+5. GSAP
+6. Swiper
+7. React-hook-form + yup
