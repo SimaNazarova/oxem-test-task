@@ -22,6 +22,7 @@ function Modal() {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(applicationSchema),
@@ -33,6 +34,7 @@ function Modal() {
     console.log('Form Data:', data);
 
     closeModal();
+    reset();
   };
 
   const modalRef = useRef<HTMLDivElement>(null);
