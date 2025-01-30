@@ -92,7 +92,13 @@ function Slider() {
           return (
             <SwiperSlide key={index}>
               <div className='gallery__slider'>
-                <Image src={imageSrc} alt='пример автомобиля' className='gallery__image' />
+                <Image
+                  src={imageSrc}
+                  alt='пример автомобиля'
+                  className='gallery__image'
+                  priority={true}
+                  title='пример автомобиля'
+                />
                 <div className='gallery__content'>
                   {slide.title && <p className='gallery__title'>{slide.title}</p>}
                   {slide.subtitle && <p className='gallery__text'>{slide.subtitle}</p>}

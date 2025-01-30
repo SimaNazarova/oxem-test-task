@@ -102,15 +102,15 @@ function Modal() {
 
           <div className='modal__socials'>
             <Link href='/' className='modal__socialIcon'>
-              <Image src={whatsup} alt='whatsup' />
+              <Image src={whatsup} alt='whatsup' title='whatsup' />
             </Link>
             <Link href='/' className='modal__socialIcon'>
-              <Image src={tg} alt='telegram' />
+              <Image src={tg} alt='telegram' title='telegram' />
             </Link>
           </div>
         </div>
         <button className='modal__close' onClick={closeModal}>
-          <Image src={close} alt='закрыть модальное окно' />
+          <Image src={close} alt='закрыть модальное окно' title='закрыть модальное окно' />
         </button>
       </div>
     </div>,

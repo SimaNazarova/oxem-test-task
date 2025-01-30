@@ -52,7 +52,7 @@ function MobileMenu() {
           </nav>
         </div>
         <button className='mobileMenu__close' onClick={closeModal}>
-          <Image src={closeMobileMenu} alt='закрыть модальное окно' />
+          <Image src={closeMobileMenu} alt='закрыть модальное окно' title='закрыть модальное окно' />
         </button>
       </div>
     </div>

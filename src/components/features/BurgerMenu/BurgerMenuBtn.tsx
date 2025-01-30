@@ -10,7 +10,7 @@ function BurgerMenuBtn() {
   const { setOpenMobileMenu } = useStore();
   return (
     <div className='burgerBtn' onClick={() => setOpenMobileMenu(true)}>
-      <Image src={width > 320 ? burgerBtn : burgerBtnWhite} alt='Открыть меню' />
+      <Image src={width > 320 ? burgerBtn : burgerBtnWhite} alt='Открыть меню' title='Открыть меню' />
     </div>
   );
 }
