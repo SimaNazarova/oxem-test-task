@@ -42,6 +42,10 @@
     position: relative;
     z-index: 2;
   }
+  &__inputRange::-moz-range-thumb {
+    background-color: $secondary;
+    border: none;
+  }
 
   &__inputSign {
     font-family: $mainFont;

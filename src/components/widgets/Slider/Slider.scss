@@ -8,8 +8,6 @@
 
   position: relative;
 
-  overflow: hidden;
-
   &__content {
     position: absolute;
     top: 70px;
@@ -34,6 +32,9 @@
 
   &__btn {
     margin-top: 24px;
+  }
+  &__image {
+    margin-bottom: -5px;
   }
 }
 
