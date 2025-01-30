@@ -92,7 +92,7 @@ function Modal() {
             <div className='modal__btnContainer'>
               <p className='modal__btnText'>
                 Нажимая на&nbsp;кнопку &laquo;Оставить заявку&raquo;, я&nbsp;даю согласие{' '}
-                <Link href='./document' className='modal__btnLink'>
+                <Link href='/' className='modal__btnLink'>
                   на&nbsp;обработку персональных данных
                 </Link>
               </p>
