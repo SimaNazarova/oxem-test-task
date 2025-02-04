@@ -5,9 +5,30 @@
   width: 100%;
   height: 473px;
   margin: 0 auto;
-
   position: relative;
 
+  &__seoTitle {
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  &__slider {
+    height: 473px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__contentContainer {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+  }
   &__content {
     position: absolute;
     top: 70px;
@@ -70,6 +91,15 @@
 @media screen and (max-width: 768px) {
   .gallery {
     max-width: 696px;
+    &__contentContainer {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+      top: unset;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 40%;
+    }
     &__content {
       top: unset;
       bottom: 68px;
@@ -120,11 +150,11 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 500px) {
   .gallery {
     width: 100%;
   }
   .swiper-slide {
-    border-radius: 0 0 32px;
+    border-radius: 0 0 32px 32px;
   }
 }

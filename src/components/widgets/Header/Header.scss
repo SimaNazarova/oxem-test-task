@@ -54,8 +54,6 @@
   }
 }
 
-
-
 @include mobile {
   .header {
     padding-left: 20px;
@@ -65,7 +63,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .header {
     background-color: $dark;
     padding-left: 20px;

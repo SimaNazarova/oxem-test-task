@@ -10,7 +10,7 @@ const HeaderLeftBlock = () => {
 
   return (
     <div className='headerLeftBlock'>
-      <Image src={width > 320 ? logoDark : logoLight} alt='логотип' width={width > 1439 ? 200 : 166} title='логотип' />
+      <Image src={width > 500 ? logoDark : logoLight} alt='логотип' width={width > 1439 ? 200 : 166} title='логотип' />
       {width > 767 && (
         <>
           <div className='headerLeftBlock__verticalLine'></div>
