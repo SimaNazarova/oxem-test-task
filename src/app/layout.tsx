@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 import '../styles/globals.scss';
 import Header from '../components/widgets/Header/Header';
-// import Modal from '../components/widgets/Modal/Modal';
-// import MobileMenu from '../components/widgets/MobileMenu/MobileMenu';
+import Modal from '../components/widgets/Modal/Modal';
+import MobileMenu from '../components/widgets/MobileMenu/MobileMenu';
 
 export const metadata: Metadata = {
   title: 'Oxem test task',
@@ -20,8 +20,8 @@ export default function RootLayout({
       <body>
         <Header />
         <div className='container'>{children}</div>
-        {/* <Modal />
-        <MobileMenu /> */}
+        <Modal />
+        <MobileMenu />
       </body>
     </html>
   );
