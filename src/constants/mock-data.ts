@@ -47,7 +47,7 @@ export const calcData = [
 export const slides = [
   {
     title: 'Дань уважения классике!',
-    subtitle: 'Успейте оформить лизинг на Lancer X Evolution - Final Edition',
+    subtitle: 'Успейте оформить лизинг на Lancer X Evolution',
     id: 4,
     img: car4,
   },
