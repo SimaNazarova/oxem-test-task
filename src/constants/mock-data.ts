@@ -80,4 +80,4 @@ export const slides = [
 
 export const LEASING_RATE = 21 / (100 * 12); //Ключевая ставка Банка России на 26.01
 
-export const SUCCESS_MESSAGE = 'Заявка успешно отправлена';
+export const SUCCESS_MESSAGE = 'Заявка успешно вывелась в консоль';
