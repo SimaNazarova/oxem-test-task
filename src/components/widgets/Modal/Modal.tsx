@@ -17,6 +17,7 @@ import { useStore } from '@/src/store/store';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 import { useOnClickOutside } from '@/src/hooks/useOnClickOutside';
+import { SUCCESS_MESSAGE } from '@/src/constants/mock-data';
 
 function Modal() {
   const {
@@ -29,12 +30,16 @@ function Modal() {
     reValidateMode: 'onChange',
     mode: 'onChange',
   });
-  const { openModal, setOpenModal, setOpenMobileMenu } = useStore();
+  const { openModal, setOpenModal, setOpenMobileMenu, setOpenTooltip, setTooltipMessage } = useStore();
+
   const onSubmit = (data: IApplicationData) => {
     console.log('Form Data:', data);
-
-    closeModal();
-    reset();
+    setTooltipMessage(SUCCESS_MESSAGE);
+    setOpenTooltip(true);
+    setTimeout(() => {
+      closeModal();
+      reset();
+    }, 1000);
   };
 
   const modalRef = useRef<HTMLDivElement>(null);

@@ -3,8 +3,8 @@ import * as Yup from 'yup';
 export const validationSchema = Yup.object().shape({
   price: Yup.number()
     .typeError('Введите число')
-    .min(100000, `Число должно быть не меньше 1000000`)
-    .max(6000000, 'Число должно быть не больше 6000000')
+    .min(1000000, `Число должно быть не меньше 1 млн.`)
+    .max(6000000, 'Число должно быть не больше 6 млн.')
     .required('Поле обязательно'),
   payment: Yup.number()
     .typeError('Введите число')

@@ -75,6 +75,7 @@ function Calculator() {
             control={control}
             error={Boolean(errors.price)}
             errorMessage={errors.price?.message}
+            maxLength={10}
           />
           <SmallInputWithRange
             field={calcData[1]}
@@ -82,6 +83,7 @@ function Calculator() {
             firstPayment={firstPayment}
             error={Boolean(errors.payment)}
             errorMessage={errors.payment?.message}
+            maxLength={2}
           />
           <InputWithRange
             field={calcData[2]}
@@ -89,6 +91,7 @@ function Calculator() {
             control={control}
             error={Boolean(errors.term)}
             errorMessage={errors.term?.message}
+            maxLength={3}
           />
         </div>
         <div className='calc__sum'>

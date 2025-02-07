@@ -19,9 +19,10 @@ interface IInputWithRange {
   control: Control<any>;
   errorMessage?: string;
   error: boolean;
+  maxLength: number;
 }
 
-const InputWithRange: React.FC<IInputWithRange> = ({ field, percentage, control, errorMessage, error }) => {
+const InputWithRange: React.FC<IInputWithRange> = ({ field, percentage, control, errorMessage, error, maxLength }) => {
   const { start, end, title, sign, name } = field;
 
   return (
@@ -44,7 +45,7 @@ const InputWithRange: React.FC<IInputWithRange> = ({ field, percentage, control,
                 id={title}
                 type='text'
                 value={value}
-                max={10}
+                maxLength={maxLength}
                 onChange={e => {
                   const inputValue = e.target.value;
                   if (/^\d*$/.test(inputValue)) {

@@ -10,6 +10,10 @@ interface StoreState {
   setOpenModal: (openModal: boolean) => void;
   openMobileMenu: boolean;
   setOpenMobileMenu: (openMobileMenu: boolean) => void;
+  openTooltip: boolean;
+  setOpenTooltip: (openTooltip: boolean) => void;
+  tooltipMessage: string;
+  setTooltipMessage: (tooltipMessage: string) => void;
 }
 
 export const useStore = create<StoreState>(set => ({
@@ -42,6 +46,22 @@ export const useStore = create<StoreState>(set => ({
     set(
       produce(state => {
         state.openMobileMenu = value;
+      }),
+    );
+  },
+  openTooltip: false,
+  setOpenTooltip: value => {
+    set(
+      produce(state => {
+        state.openTooltip = value;
+      }),
+    );
+  },
+  tooltipMessage: '',
+  setTooltipMessage: value => {
+    set(
+      produce(state => {
+        state.tooltipMessage = value;
       }),
     );
   },

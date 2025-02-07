@@ -19,9 +19,17 @@ interface ISmallInputWithRange {
   firstPayment: number;
   errorMessage?: string;
   error: boolean;
+  maxLength: number;
 }
 
-const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, firstPayment, errorMessage, error }) => {
+const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({
+  field,
+  control,
+  firstPayment,
+  errorMessage,
+  error,
+  maxLength,
+}) => {
   const { start, end, title, name } = field;
 
   return (
@@ -49,7 +57,7 @@ const SmallInputWithRange: React.FC<ISmallInputWithRange> = ({ field, control, f
                   id={title}
                   type='text'
                   value={value}
-                  maxLength={2}
+                  maxLength={maxLength}
                   onChange={e => {
                     const inputValue = e.target.value;
                     if (/^\d*$/.test(inputValue)) {
